@@ -14,7 +14,7 @@ section#reservations-content {
 	background: var(--canatur-gris-claro);
 	width: 100%;
 	border-color: var(--canatur-gris-metal) !important;
-	border: solid 1px;
+	/*border: solid 1px;*/
 }
 
 .date-selection-container {
@@ -97,7 +97,7 @@ input:focus, select:focus {
 .table-container{
 	float: left;
 	width: 100%;
-	border: solid 1px;
+	/*border: solid 1px;*/
 	height: auto;
 	padding: .1em;
 }
