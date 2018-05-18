@@ -1,4 +1,5 @@
 package application.EventsManager;
+import application.TagsManager.Event;
 import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
@@ -10,7 +11,7 @@ import java.util.Scanner;
 public class CSVLoader {
     @Autowired
     ResourceLoader resourceLoader;
-
+    private Event e;
     public CSVLoader() {
 
     }
@@ -19,9 +20,8 @@ public class CSVLoader {
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
         String s = "what";
         try(BufferedReader br = new BufferedReader(inputStreamReader)){
-            br.readLine();
-            br.readLine();
             s = br.readLine();
+            s += br.readLine();
         } catch (IOException E){
 
         }

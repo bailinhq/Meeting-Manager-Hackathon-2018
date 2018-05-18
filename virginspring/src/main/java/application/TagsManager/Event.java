@@ -12,9 +12,9 @@ public class Event {
     private int action;
     private ArrayList<String> owners;
     private String escalation;
-    private ArrayList<double> results;
+    private ArrayList<Double> results;
     public Event(int numberE, String wp, String pMeasure, String src, String dest, String t,
-                 int act, ArrayList<String> owner, String esc, ArrayList<double> res){
+                 int act, ArrayList<String> owner, String esc, ArrayList<Double> res){
         eventNumber = numberE;
         workingProcess = wp;
         processMeasure = pMeasure;
@@ -99,11 +99,11 @@ public class Event {
         this.escalation = escalation;
     }
 
-    public ArrayList<double> getResults() {
+    public ArrayList<Double> getResults() {
         return results;
     }
 
-    public void setResults(ArrayList<double> results) {
+    public void setResults(ArrayList<Double> results) {
         this.results = results;
     }
 }
