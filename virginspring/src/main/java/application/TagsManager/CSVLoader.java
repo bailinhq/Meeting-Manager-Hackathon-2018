@@ -1,5 +1,7 @@
 package application.TagsManager;
 
+import application.TagsManager.Event;
+
 import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
@@ -28,10 +30,9 @@ public class CSVLoader {
         this.events = events;
     }
 
-    public String load(InputStream inputStream) {
+    public void load(InputStream inputStream) {
+        String s = "";
         InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-        String s = "what";
-        String z = "what";
         try(BufferedReader br = new BufferedReader(inputStreamReader)){
             while ((s = br.readLine()) != null) {
                 s += br.readLine();
@@ -55,17 +56,31 @@ public class CSVLoader {
                 results.add(Double.parseDouble(attributes[9]));
                 results.add(Double.parseDouble(attributes[10]));
                 results.add(Double.parseDouble(attributes[11]));
-                events.put(numberE, new Event(numberE,workingProcess,processMeasure,source,destination,type,action,owners,
-                        escalation,results));
+                e = new Event(numberE,workingProcess,processMeasure,source,destination,type,action,owners,
+                        escalation,results, 0);
+                e.setPriority(this.getPrioridad(e));
+                events.put(numberE, e);
+
             }
         } catch (IOException E){
 
         }
-        return z;
     }
 
+    private int getPrioridad(Event event){
+        double porcentaje =  event.getResults().get(0) / (double) event.getAction();
+        if (porcentaje >= 1){
+            return 0;
+        }
+        double i = 0.0;
+        int prioridad = 0;
+        while (porcentaje >= i){
+            i += 10.0;
+            prioridad++;
+        }
+        return prioridad;
+    }
     public void main(String[] args)  {
-        System.out.println("");
     }
 
 }
