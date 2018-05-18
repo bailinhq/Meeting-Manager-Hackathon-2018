@@ -13,10 +13,13 @@ public class Event {
     private ArrayList<String> owners;
     private String escalation;
     private ArrayList<Double> results;
+    private int priority;
+
     public Event(int numberE, String wp, String pMeasure, String src, String dest, String t,
-                 int act, ArrayList<String> owner, String esc, ArrayList<Double> res){
+                 int act, ArrayList<String> owner, String esc, ArrayList<Double> res, int prioridad){
         eventNumber = numberE;
         workingProcess = wp;
+
         processMeasure = pMeasure;
         source = src;
         destination = dest;
@@ -25,8 +28,16 @@ public class Event {
         owners = owner;
         escalation = esc;
         results = res;
+        priority = prioridad;
     }
 
+    public int getPriority() {
+        return priority;
+    }
+
+    public void setPriority(int priority) {
+        this.priority = priority;
+    }
     public int getEventNumber() {
         return eventNumber;
     }
