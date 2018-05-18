@@ -1,5 +1,5 @@
-package application.EventsManager;
-import application.TagsManager.Event;
+package application.TagsManager;
+
 import jdk.internal.util.xml.impl.Input;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;

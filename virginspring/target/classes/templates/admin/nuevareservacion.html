@@ -26,18 +26,18 @@
     <section id="content" class="column-right">
         <div class="content-wrapper">
             <div class="float-left">
-                <h1>NUEVA RESERVACIÓN</h1>
+                <h1>DASHBOARD</h1>
             </div>
             <div class="reservation-form-container">
                 <div class = "container" id="reservation">
                     <div class="row form-row">
-                        <form action="#" method="post" role="form" th:action="@{/admin/nuevareservacion}" th:object="${reservation}">
+                        <form action="#" method="post" role="form" >
                             <div class="row form-row">
                                 <fieldset class="form-vertical">
                                     <div class="field form-control-wide field-airlines">
                                         <label class="control-label form-label" style="float:right;">Afiliado<font color="#CC0000">*</font></label>
-                                        <select id ="id-partner" class="form-control form-control-wide" th:field="*{idPartnerFK}">
-                                            <option th:each="partner : ${partnersList}" th:value="${partner.numId}" th:text="${partner.numId} + ': ' + ${partner.name}" />
+                                        <select id ="id-partner" class="form-control form-control-wide" >
+                                            <option  />
                                         </select>
                                     </div>
                                 </fieldset>
@@ -48,10 +48,10 @@
                                         <label class="control-label form-label">Pasajero representante<font color="#CC0000">*</font></label>
                                         <fieldset class="form-vertical">
                                             <div class="field textbox-main-passenger">
-                                                <input type="text" class="form-control form-control-wide" placeholder="Apellido"  th:field="*{lastname}"/>
+                                                <input type="text" class="form-control form-control-wide" placeholder="Apellido"  />
                                             </div>
                                             <div class="field textbox-main-passenger">
-                                                <input type="text" class="form-control form-control-wide" placeholder="Nombre" th:field="*{nameRepresent}"/>
+                                                <input type="text" class="form-control form-control-wide" placeholder="Nombre" />
                                             </div>
 
                                         </fieldset>
@@ -62,17 +62,17 @@
                                 <fieldset class="form-vertical">
                                     <div class="field field-properties">
                                         <label class="control-label form-label">Fecha de vuelo<font color="#CC0000">*</font></label>
-                                        <input class="form-control form-control-wide" id="arrival-date" type="date" value="2011-08-19" th:field="*{arrivalDate}" data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Elija una fecha de llegada."/>
+                                        <input class="form-control form-control-wide" id="arrival-date" type="date" value="2011-08-19"  data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Elija una fecha de llegada."/>
                                     </div>
                                     <div class="field field-properties">
                                         <label class="control-label form-label">Aerolínea<font color="#CC0000">*</font></label>
-                                        <select class="form-control form-control-wide" id="airline-selector" th:field="*{initials_fk}" disabled="disabled" data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Seleccione la aerolínea en que viajarán los pasajeros.">
-                                            <option th:each="airline : ${airlinesList}" th:value="${airline.initialPk}" th:text="${airline.initialPk} + ': ' + ${airline.name}" />
+                                        <select class="form-control form-control-wide" id="airline-selector"  disabled="disabled" data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Seleccione la aerolínea en que viajarán los pasajeros.">
+                                            <option  />
                                         </select>
                                     </div>
                                     <div class="field field-properties">
                                         <label class="control-label form-label">Número de vuelo<font color="#CC0000">*</font></label>
-                                        <select class="form-control form-control-wide" id="flight-selector" th:field="*{flightNumber}" disabled="disabled" data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Seleccione el número de vuelo.">
+                                        <select class="form-control form-control-wide" id="flight-selector"  disabled="disabled" data-toggle="tooltip" data-placement="bottom" data-trigger="focus hover" title="Seleccione el número de vuelo.">
 
                                         </select>
                                     </div>

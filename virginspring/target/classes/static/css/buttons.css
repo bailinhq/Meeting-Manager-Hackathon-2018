@@ -1,6 +1,7 @@
 @import "general.css";
 
 button.general {
+    border-radius: 25px;
     border: none;
     outline: none;
     background: var(--canatur-verde);
@@ -11,7 +12,7 @@ button.general {
 }
 
 button.general:hover {
-    background: #4EBB44;
+    background: #4282c7;
 }
 
 

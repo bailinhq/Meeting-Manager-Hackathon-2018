@@ -78,7 +78,7 @@ label.control-label.form-label.summer-schedule {
 
 .container#reservation{
 	background-color:#EEE;
-	border-radius:5px;
+	/*border-radius:5px;*/
 	width: 100% !important;
 	padding: 0.5em !important;
 }
