@@ -18,9 +18,9 @@
     <section id="content" class="column-right">
         <!-- Here we add our page content. Everything else is meant to be the same for every page. -->
         <div class="display-inline-section">
-            <section layout:replace="admin/layouts/table-pagination :: rowCounter('reservation-filter')"></section>
+
             <section layout:replace="admin/layouts/reservations-table :: reservation-table" layout:remove="tag"></section>
-            <section layout:replace="admin/layouts/table-pagination :: pagination(${actualPage},${pageCount})"></section>
+
         </div>
     </section>
 </section>

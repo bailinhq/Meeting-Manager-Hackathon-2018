@@ -119,4 +119,27 @@ public class Event {
     public void setResults(ArrayList<Double> results) {
         this.results = results;
     }
+
+    public ArrayList<String> getArray(){
+        ArrayList<String> result = new ArrayList<String>();
+
+        result.add(getWorkingProcess());
+        result.add(getProcessMeasure());
+        result.add(getSource());
+        result.add(getDestination());
+        result.add(getType());
+        result.add(String.valueOf(getAction()));
+
+        //Owners
+        String owners = "";
+        for (int i = 0; i < getOwners().size();i++)
+            owners += getOwners().get(i) + " ";
+        result.add(owners);
+
+        result.add(getEscalation());
+        result.add(getResults().get(0).toString());
+        result.add(getResults().get(1).toString());
+        result.add(getResults().get(2).toString());
+        return result;
+    }
 }

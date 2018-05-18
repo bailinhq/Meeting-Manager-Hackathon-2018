@@ -1,14 +1,12 @@
 package application.ProblemsResolver;
 
 
+import application.TagsManager.Event;
+import application.TagsManager.EventResolved;
 import javafx.util.Pair;
 
 import java.io.Serializable;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Created by Milton and Oscar on 17-May-17.
@@ -61,6 +59,39 @@ public class TreeController implements Serializable {
 
     /*------------------------------------------METHODS-------------------------------------------*/
 
+    public String evaluateEvent(ArrayList<String> event){
+        monitor(); //Solo para monitorear las preguntas
+
+        HashMap<String,String> eventMap = new HashMap<String, String>();
+        eventMap.put("workprocess"     ,event.get(0));
+        eventMap.put("inprocessmeasure",event.get(1));
+        eventMap.put("source",          event.get(2));
+        eventMap.put("destination",     event.get(3));
+        eventMap.put("unit",            event.get(4));
+        eventMap.put("action",          event.get(5));
+        eventMap.put("owner",           event.get(6));
+        eventMap.put("escalation",      event.get(7));
+        eventMap.put("10-May",          event.get(8));
+        eventMap.put("09-May",          event.get(9));
+        eventMap.put("07-May",          event.get(10));
+        printTree();
+        do {
+            try {
+                String question = getQuestionAndOptions().get(0);
+                String answer = eventMap.get(
+                        question
+                        );
+
+                reply(
+                    answer
+                );
+            } catch (AnswerException ex){
+                return "MEETING";
+            }
+        }while(_MIFoundState != InductionState.FOUND_NOT_COMMITED && _MIFoundState != InductionState.IMPOSSIBLE_TO_FIND);
+        return getQuestionAndOptions().get(0);
+    }
+
     /* E:  -
     *  S:  Retorna una pregunta con sus respuestas para inducir un macroinvertebrado.
     *       ESPECIFICACIÃ“N DEL FORMATO
@@ -68,10 +99,10 @@ public class TreeController implements Serializable {
     *       result =[]                                      si _actualNode es nodo hoja
     *  R:  -
     * */
-    public LinkedHashSet<String> getQuestionAndOptions() {
+    public LinkedList<String> getQuestionAndOptions() {
         monitor(); //Solo para monitorear las preguntas
 
-        LinkedHashSet<String> result = new LinkedHashSet<String>();
+        LinkedList<String> result = new LinkedList<String>();
         String buffer = "";
         if (_MIFoundState == InductionState.POSSIBLE_TO_FIND) {
             result.add(new String(_actualNode.getAttribute().getName()));

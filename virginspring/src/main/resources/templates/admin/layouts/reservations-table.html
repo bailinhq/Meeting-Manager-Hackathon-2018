@@ -18,8 +18,8 @@
     <!-- Here we add our page content. Everything else is meant to be the same for every page. -->
     <div class="float-left">
         <h1>DASHBOARD</h1>
-        <form th:action="@{/admin/nuevaReserva}">
-            <button type="submit" class="general">Agregar</button>
+        <form th:action="@{/admin/generarevento}">
+            <button type="submit" class="general">Generar Eventos</button>
         </form>
     </div>
     <p id="message-alert" class="not-visible" ></p>
@@ -49,9 +49,9 @@
                 <th >Action</th>
                 <th >Unit</th>
                 <th >Owner</th>
-                <th >Scalation</th>
-                <th >Fechas</th>
-                <th >Prioridad</th>
+                <th >Result</th>
+                <!--<th >Fechas</th>-->
+                <!--<th >Prioridad</th>-->
             </th:block>
         </thead>
         <tbody>
@@ -65,18 +65,18 @@
                                 <span class="slider round"></span>
                             </label>
                         </td>
-                        <td >
+                        <td th:text="${workprocess}">
                             <a class="link-reservation-id"
 
                                ></a>
                         </td>
-                        <td />
-                        <td />
-                        <td  />
-                        <td class="date-element" ></td>
-                        <td class="hide-mobile small-column time" ></td>
-                        <td />
-                        <td >
+                        <td th:text="${inprocessmeasure}" />
+                        <td th:text="${source}"/>
+                        <td  th:text="${destination}"/>
+                        <td th:text="${unit}" class="date-element" ></td>
+                        <td th:text="${action}" class="hide-mobile small-column time" ></td>
+                        <td th:text="${owner}" />
+                        <td th:text="${escalation}">
                             <th:block >
                                 <th:block >
                                     <span class="tag" ></span>
@@ -86,16 +86,9 @@
                                 Sin comentarios.
                             </th:block>
                         </td>
-                        <td align="center" >
-                            <th:block >
-
-                            </th:block>
-                        </td>
-                        <td align="center" >
-                            <th:block >
-
-                            </th:block>
-                        </td>
+                        <!--<td align="center" />-->
+                        <!--<td align="center" >-->
+                        <!--</td>-->
                     </tr>
                 </th:block>
             </form>
