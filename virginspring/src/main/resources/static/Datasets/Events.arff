@@ -1,0 +1,169 @@
+@RELATION Events
+
+@ATTRIBUTE attribute_0 REAL
+@ATTRIBUTE attribute_1 {Inventory Management,On Time Delivery,Production Management}
+@ATTRIBUTE attribute_2 {Inventory in MSU,Production - BRAZIL,Value Stream CFR,Value Stream MTD,Value Stream MTD - ARGENTINA,Value Stream MTD - BRAZIL}
+@ATTRIBUTE attribute_3 {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}
+@ATTRIBUTE attribute_4 {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}
+@ATTRIBUTE attribute_5 {%,MSU,d}
+@ATTRIBUTE attribute_6 REAL
+@ATTRIBUTE attribute_7 {"Jose Salazar; Cristian Matamoros;","Laura Camacho; Cristian Matamoros;","Laura Camacho; Hidalgo David; Carlos Lara;","Laura Camacho; Hidalgo David;"}
+@ATTRIBUTE attribute_8 {N.A.}
+@ATTRIBUTE attribute_9 REAL
+@ATTRIBUTE attribute_10 REAL
+@ATTRIBUTE attribute_11 REAL
+@ATTRIBUTE attribute_12 {AUMENTAR_20%,AUMENTAR_PRODUCTO,DUPLICAR_HORA,POSTERGAR_PRODUCTO}
+
+@DATA
+0,On Time Delivery,Value Stream MTD,COSTA RICA,NICARAGUA,%,98,"Laura Camacho; Hidalgo David;",N.A.,90.59,90.83,100,POSTERGAR_PRODUCTO
+1,On Time Delivery,Value Stream CFR,NICARAGUA,GUATEMALA,%,98,"Laura Camacho; Hidalgo David;",N.A.,78.1,77.53,46.96,DUPLICAR_HORA
+2,On Time Delivery,Value Stream MTD - BRAZIL,COSTA RICA,BRAZIL,%,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,85.76,87.01,100,AUMENTAR_20%
+3,On Time Delivery,Value Stream MTD - ARGENTINA,NICARAGUA,ARGENTINA,%,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,90.83,100,POSTERGAR_PRODUCTO
+4,Inventory Management,Inventory in MSU ,COSTA RICA,NICARAGUA,MSU,0,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,174.25,183,DUPLICAR_HORA
+5,Inventory Management,Inventory in MSU ,BRAZIL,GUATEMALA,MSU,0,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,174.25,183,AUMENTAR_20%
+6,Production Management,Production - BRAZIL,BRAZIL,NICARAGUA,d,5000,"Jose Salazar; Cristian Matamoros;",N.A.,4000,4786,5100,POSTERGAR_PRODUCTO
+7,On Time Delivery,Value Stream MTD - BRAZIL,ARGENTINA,COSTA RICA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,5,1,DUPLICAR_HORA
+8,On Time Delivery,Inventory in MSU ,GUATEMALA,BRAZIL,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,90.59,90.83,AUMENTAR_20%
+9,Production Management,Production - BRAZIL,NICARAGUA,COSTA RICA,MSU,120,"Laura Camacho; Cristian Matamoros;",N.A.,46.96,78.1,77.53,POSTERGAR_PRODUCTO
+10,Production Management,Value Stream MTD - ARGENTINA,BRAZIL,ARGENTINA,d,120,"Jose Salazar; Cristian Matamoros;",N.A.,100,85.76,87.01,DUPLICAR_HORA
+11,Inventory Management,Inventory in MSU ,COSTA RICA,NICARAGUA,%,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,90.59,90.83,AUMENTAR_20%
+12,On Time Delivery,Production - BRAZIL,NICARAGUA,GUATEMALA,%,0,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,176.45,174.25,POSTERGAR_PRODUCTO
+13,Production Management,Value Stream MTD - ARGENTINA,COSTA RICA,COSTA RICA,MSU,0,"Laura Camacho; Cristian Matamoros;",N.A.,183,176.45,174.25,DUPLICAR_HORA
+14,Inventory Management,Value Stream MTD - BRAZIL,COSTA RICA,ARGENTINA,d,98,"Laura Camacho; Cristian Matamoros;",N.A.,5100,4000,4786,AUMENTAR_20%
+15,Production Management,Inventory in MSU ,BRAZIL,NICARAGUA,%,98,"Jose Salazar; Cristian Matamoros;",N.A.,1,5100,5,POSTERGAR_PRODUCTO
+16,Inventory Management,Value Stream MTD - ARGENTINA,NICARAGUA,GUATEMALA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,87.01,1,78.1,DUPLICAR_HORA
+17,Inventory Management,Inventory in MSU ,GUATEMALA,NICARAGUA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,90.83,85.76,AUMENTAR_20%
+18,Inventory Management,Production - BRAZIL,BRAZIL,COSTA RICA,MSU,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,77.53,90.59,POSTERGAR_PRODUCTO
+19,Inventory Management,Value Stream MTD - BRAZIL,COSTA RICA,BRAZIL,d,0,"Laura Camacho; Cristian Matamoros;",N.A.,174.25,87.01,176.45,DUPLICAR_HORA
+20,Production Management,Inventory in MSU ,NICARAGUA,BRAZIL,%,0,"Laura Camacho; Cristian Matamoros;",N.A.,4786,90.83,176.45,AUMENTAR_PRODUCTO
+21,On Time Delivery,Value Stream MTD - ARGENTINA,COSTA RICA,NICARAGUA,MSU,98,"Jose Salazar; Cristian Matamoros;",N.A.,5,174.25,4000,POSTERGAR_PRODUCTO
+22,Production Management,Inventory in MSU ,ARGENTINA,GUATEMALA,MSU,0,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,85.76,174.25,1,DUPLICAR_HORA
+23,On Time Delivery,Inventory in MSU ,ARGENTINA,BRAZIL,d,5200,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,100,100,AUMENTAR_20%
+24,Inventory Management,Inventory in MSU ,GUATEMALA,COSTA RICA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,183,46.96,POSTERGAR_PRODUCTO
+25,On Time Delivery,Inventory in MSU ,BRAZIL,NICARAGUA,d,0,"Jose Salazar; Cristian Matamoros;",N.A.,176.45,183,100,DUPLICAR_HORA
+26,Inventory Management,Production - BRAZIL,NICARAGUA,GUATEMALA,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,4000,5100,100,AUMENTAR_20%
+27,On Time Delivery,Value Stream MTD - ARGENTINA,BRAZIL,GUATEMALA,d,0,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,1,183,POSTERGAR_PRODUCTO
+28,Inventory Management,Inventory in MSU ,ARGENTINA,GUATEMALA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,100,87.01,183,DUPLICAR_HORA
+29,On Time Delivery,Production - BRAZIL,ARGENTINA,GUATEMALA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,46.96,90.83,5100,AUMENTAR_20%
+30,Inventory Management,Value Stream MTD - ARGENTINA,GUATEMALA,NICARAGUA,MSU,0,"Jose Salazar; Cristian Matamoros;",N.A.,90.83,174.25,1,POSTERGAR_PRODUCTO
+31,Inventory Management,Inventory in MSU ,BRAZIL,NICARAGUA,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,174.25,174.25,DUPLICAR_HORA
+32,Production Management,Value Stream MTD - ARGENTINA,NICARAGUA,COSTA RICA,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,4786,174.25,AUMENTAR_20%
+33,On Time Delivery,Inventory in MSU ,GUATEMALA,COSTA RICA,%,120,"Laura Camacho; Cristian Matamoros;",N.A.,4786,5,4786,POSTERGAR_PRODUCTO
+34,On Time Delivery,Production - BRAZIL,BRAZIL,COSTA RICA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,5,85.76,5,DUPLICAR_HORA
+35,Production Management,Value Stream MTD - BRAZIL,COSTA RICA,ARGENTINA,MSU,500,"Laura Camacho; Cristian Matamoros;",N.A.,90.59,90.59,90.59,AUMENTAR_20%
+36,Production Management,Inventory in MSU ,NICARAGUA,ARGENTINA,%,0,"Jose Salazar; Cristian Matamoros;",N.A.,78.1,176.45,78.1,POSTERGAR_PRODUCTO
+37,Inventory Management,Value Stream MTD - ARGENTINA,COSTA RICA,NICARAGUA,MSU,0,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,85.76,176.45,85.76,DUPLICAR_HORA
+38,On Time Delivery,Value Stream MTD - ARGENTINA,ARGENTINA,GUATEMALA,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,4000,90.59,AUMENTAR_20%
+39,On Time Delivery,Value Stream MTD - BRAZIL,BRAZIL,ARGENTINA,d,0,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,176.45,90.59,176.45,POSTERGAR_PRODUCTO
+40,On Time Delivery,Value Stream MTD - ARGENTINA,NICARAGUA,ARGENTINA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,176.45,176.45,DUPLICAR_HORA
+41,Inventory Management,Value Stream MTD - BRAZIL,GUATEMALA,COSTA RICA,d,98,"Laura Camacho; Cristian Matamoros;",N.A.,4000,176.45,4000,AUMENTAR_20%
+42,Inventory Management,Inventory in MSU ,BRAZIL,GUATEMALA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,5100,4000,5100,POSTERGAR_PRODUCTO
+43,Inventory Management,Production - BRAZIL,COSTA RICA,GUATEMALA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,1,1,DUPLICAR_HORA
+44,Inventory Management,Value Stream MTD - BRAZIL,NICARAGUA,GUATEMALA,%,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,100,90.83,AUMENTAR_20%
+45,Inventory Management,Inventory in MSU ,COSTA RICA,GUATEMALA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,77.53,46.96,77.53,POSTERGAR_PRODUCTO
+46,Production Management,Value Stream MTD - ARGENTINA,ARGENTINA,BRAZIL,MSU,500,"Jose Salazar; Cristian Matamoros;",N.A.,87.01,100,87.01,DUPLICAR_HORA
+47,On Time Delivery,Inventory in MSU ,ARGENTINA,BRAZIL,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,100,90.83,AUMENTAR_20%
+48,Inventory Management,Production - BRAZIL,GUATEMALA,ARGENTINA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,183,174.25,POSTERGAR_PRODUCTO
+49,Inventory Management,Value Stream MTD - BRAZIL,BRAZIL,ARGENTINA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,174.25,183,174.25,DUPLICAR_HORA
+50,Production Management,Inventory in MSU ,NICARAGUA,COSTA RICA,MSU,5000,"Laura Camacho; Cristian Matamoros;",N.A.,100,5100,100,AUMENTAR_20%
+51,On Time Delivery,Value Stream MTD - BRAZIL,NICARAGUA,COSTA RICA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,183,1,183,POSTERGAR_PRODUCTO
+52,On Time Delivery,Inventory in MSU ,COSTA RICA,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,174.25,183,DUPLICAR_HORA
+53,Production Management,Production - BRAZIL,COSTA RICA,ARGENTINA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,174.25,5100,AUMENTAR_20%
+54,Production Management,Value Stream MTD - ARGENTINA,BRAZIL,COSTA RICA,MSU,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,176.45,4786,1,POSTERGAR_PRODUCTO
+55,Inventory Management,Inventory in MSU ,NICARAGUA,GUATEMALA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,5,87.01,DUPLICAR_HORA
+56,On Time Delivery,Production - BRAZIL,GUATEMALA,COSTA RICA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,4000,90.59,90.83,AUMENTAR_20%
+57,On Time Delivery,Value Stream MTD - ARGENTINA,BRAZIL,ARGENTINA,MSU,98,"Jose Salazar; Cristian Matamoros;",N.A.,5100,78.1,174.25,POSTERGAR_PRODUCTO
+58,On Time Delivery,Value Stream MTD - BRAZIL,COSTA RICA,ARGENTINA,d,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,85.76,174.25,DUPLICAR_HORA
+59,Inventory Management,Inventory in MSU ,NICARAGUA,COSTA RICA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,90.59,100,AUMENTAR_20%
+60,Inventory Management,Value Stream MTD - ARGENTINA,NICARAGUA,COSTA RICA,%,120,"Laura Camacho; Cristian Matamoros;",N.A.,77.53,176.45,183,POSTERGAR_PRODUCTO
+61,Production Management,Inventory in MSU ,COSTA RICA,ARGENTINA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,5100,176.45,183,DUPLICAR_HORA
+62,On Time Delivery,Production - BRAZIL,COSTA RICA,ARGENTINA,d,500,"Laura Camacho; Cristian Matamoros;",N.A.,1,4000,5100,AUMENTAR_20%
+63,On Time Delivery,Value Stream MTD - BRAZIL,BRAZIL,BRAZIL,d,98,"Jose Salazar; Cristian Matamoros;",N.A.,174.25,5100,1,POSTERGAR_PRODUCTO
+64,On Time Delivery,Inventory in MSU ,NICARAGUA,ARGENTINA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,1,87.01,DUPLICAR_HORA
+65,On Time Delivery,Value Stream MTD - ARGENTINA,GUATEMALA,NICARAGUA,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,4786,90.83,90.83,AUMENTAR_20%
+66,On Time Delivery,Inventory in MSU ,BRAZIL,ARGENTINA,MSU,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5,77.53,174.25,POSTERGAR_PRODUCTO
+67,Inventory Management,Inventory in MSU ,COSTA RICA,GUATEMALA,MSU,120,"Laura Camacho; Cristian Matamoros;",N.A.,90.59,87.01,174.25,DUPLICAR_HORA
+68,Inventory Management,Inventory in MSU ,NICARAGUA,COSTA RICA,%,120,"Laura Camacho; Cristian Matamoros;",N.A.,78.1,90.83,4786,AUMENTAR_20%
+69,Production Management,Production - BRAZIL,COSTA RICA,ARGENTINA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,85.76,174.25,5,POSTERGAR_PRODUCTO
+70,Production Management,Value Stream MTD - BRAZIL,COSTA RICA,ARGENTINA,MSU,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,174.25,85.76,DUPLICAR_HORA
+71,Inventory Management,Inventory in MSU ,BRAZIL,GUATEMALA,%,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,176.45,100,90.59,AUMENTAR_20%
+72,On Time Delivery,Value Stream MTD - ARGENTINA,NICARAGUA,ARGENTINA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,183,176.45,POSTERGAR_PRODUCTO
+73,On Time Delivery,Inventory in MSU ,GUATEMALA,COSTA RICA,MSU,98,"Jose Salazar; Cristian Matamoros;",N.A.,4000,183,176.45,DUPLICAR_HORA
+74,Production Management,Production - BRAZIL,BRAZIL,COSTA RICA,d,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5100,5100,4000,AUMENTAR_20%
+75,Production Management,Value Stream MTD - BRAZIL,COSTA RICA,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,1,90.59,POSTERGAR_PRODUCTO
+76,Inventory Management,Inventory in MSU ,NICARAGUA,BRAZIL,%,120,"Laura Camacho; Cristian Matamoros;",N.A.,90.83,87.01,176.45,DUPLICAR_HORA
+77,On Time Delivery,Value Stream MTD - BRAZIL,NICARAGUA,GUATEMALA,MSU,500,"Laura Camacho; Cristian Matamoros;",N.A.,77.53,90.83,176.45,AUMENTAR_20%
+78,On Time Delivery,Inventory in MSU ,COSTA RICA,COSTA RICA,d,98,"Jose Salazar; Cristian Matamoros;",N.A.,87.01,5100,4000,POSTERGAR_PRODUCTO
+79,On Time Delivery,Production - BRAZIL,COSTA RICA,GUATEMALA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,1,1,DUPLICAR_HORA
+80,Inventory Management,Value Stream MTD - ARGENTINA,BRAZIL,GUATEMALA,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,174.25,100,AUMENTAR_20%
+81,Inventory Management,Inventory in MSU ,NICARAGUA,BRAZIL,MSU,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,174.25,46.96,POSTERGAR_PRODUCTO
+82,Production Management,Production - BRAZIL,GUATEMALA,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,4786,100,DUPLICAR_HORA
+83,On Time Delivery,Value Stream MTD - BRAZIL,BRAZIL,ARGENTINA,MSU,120,"Laura Camacho; Cristian Matamoros;",N.A.,183,5,100,AUMENTAR_20%
+84,On Time Delivery,Inventory in MSU ,COSTA RICA,BRAZIL,MSU,120,"Laura Camacho; Cristian Matamoros;",N.A.,183,90.59,183,POSTERGAR_PRODUCTO
+85,On Time Delivery,Production - BRAZIL,NICARAGUA,ARGENTINA,%,500,"Jose Salazar; Cristian Matamoros;",N.A.,5100,78.1,183,DUPLICAR_HORA
+86,On Time Delivery,Value Stream MTD - ARGENTINA,COSTA RICA,BRAZIL,d,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,85.76,5100,AUMENTAR_20%
+87,Inventory Management,Inventory in MSU ,ARGENTINA,COSTA RICA,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,87.01,90.59,1,POSTERGAR_PRODUCTO
+88,Inventory Management,Production - BRAZIL,ARGENTINA,COSTA RICA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,90.83,176.45,174.25,DUPLICAR_HORA
+89,Production Management,Value Stream MTD - ARGENTINA,GUATEMALA,NICARAGUA,%,98,"Jose Salazar; Cristian Matamoros;",N.A.,174.25,176.45,174.25,AUMENTAR_20%
+90,Inventory Management,Value Stream MTD - BRAZIL,BRAZIL,NICARAGUA,%,5000,"Laura Camacho; Cristian Matamoros;",N.A.,174.25,4000,4786,POSTERGAR_PRODUCTO
+91,On Time Delivery,Inventory in MSU ,NICARAGUA,COSTA RICA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,174.25,5100,5,DUPLICAR_HORA
+92,On Time Delivery,Value Stream MTD - ARGENTINA,BRAZIL,ARGENTINA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,1,5100,AUMENTAR_20%
+93,Production Management,Inventory in MSU ,ARGENTINA,COSTA RICA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,90.83,1,POSTERGAR_PRODUCTO
+94,Production Management,Production - BRAZIL,ARGENTINA,NICARAGUA,d,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,77.53,174.25,DUPLICAR_HORA
+95,Inventory Management,Value Stream MTD - BRAZIL,GUATEMALA,COSTA RICA,MSU,98,"Laura Camacho; Cristian Matamoros;",N.A.,5100,87.01,174.25,AUMENTAR_20%
+96,On Time Delivery,Inventory in MSU ,BRAZIL,NICARAGUA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,1,90.83,4786,POSTERGAR_PRODUCTO
+97,On Time Delivery,Value Stream MTD - ARGENTINA,NICARAGUA,ARGENTINA,%,98,"Jose Salazar; Cristian Matamoros;",N.A.,87.01,174.25,5,DUPLICAR_HORA
+98,On Time Delivery,Inventory in MSU ,GUATEMALA,NICARAGUA,%,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.83,174.25,90.59,AUMENTAR_20%
+99,Inventory Management,Inventory in MSU ,BRAZIL,NICARAGUA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,100,78.1,POSTERGAR_PRODUCTO
+100,On Time Delivery,Inventory in MSU ,COSTA RICA,NICARAGUA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,174.25,183,85.76,DUPLICAR_HORA
+101,Production Management,Inventory in MSU ,NICARAGUA,ARGENTINA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,4786,183,90.59,AUMENTAR_20%
+102,Production Management,Production - BRAZIL,COSTA RICA,BRAZIL,d,500,"Laura Camacho; Cristian Matamoros;",N.A.,5,5100,176.45,POSTERGAR_PRODUCTO
+103,Inventory Management,Value Stream MTD - ARGENTINA,ARGENTINA,BRAZIL,%,98,"Jose Salazar; Cristian Matamoros;",N.A.,85.76,1,176.45,DUPLICAR_HORA
+104,On Time Delivery,Inventory in MSU ,BRAZIL,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,90.59,87.01,4000,AUMENTAR_20%
+105,Production Management,Value Stream MTD - ARGENTINA,NICARAGUA,BRAZIL,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,176.45,90.83,5100,POSTERGAR_PRODUCTO
+106,Inventory Management,Inventory in MSU ,GUATEMALA,COSTA RICA,d,5000,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,174.25,1,DUPLICAR_HORA
+107,On Time Delivery,Value Stream MTD - ARGENTINA,BRAZIL,COSTA RICA,%,120,"Laura Camacho; Cristian Matamoros;",N.A.,4000,174.25,90.83,AUMENTAR_20%
+108,On Time Delivery,Inventory in MSU ,COSTA RICA,NICARAGUA,d,120,"Jose Salazar; Cristian Matamoros;",N.A.,90.59,174.25,77.53,POSTERGAR_PRODUCTO
+109,Production Management,Inventory in MSU ,NICARAGUA,ARGENTINA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,176.45,100,87.01,DUPLICAR_HORA
+110,Production Management,Production - BRAZIL,COSTA RICA,ARGENTINA,d,500,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,183,90.83,AUMENTAR_20%
+111,Inventory Management,Value Stream MTD - ARGENTINA,ARGENTINA,BRAZIL,%,98,"Jose Salazar; Cristian Matamoros;",N.A.,4000,183,174.25,POSTERGAR_PRODUCTO
+112,On Time Delivery,Value Stream MTD - BRAZIL,NICARAGUA,BRAZIL,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,5100,174.25,DUPLICAR_HORA
+113,On Time Delivery,Inventory in MSU ,COSTA RICA,BRAZIL,d,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,1,100,AUMENTAR_20%
+114,On Time Delivery,Production - BRAZIL,COSTA RICA,ARGENTINA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,46.96,87.01,183,POSTERGAR_PRODUCTO
+115,Inventory Management,Value Stream MTD - ARGENTINA,BRAZIL,COSTA RICA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,100,90.83,183,DUPLICAR_HORA
+116,On Time Delivery,Value Stream MTD - BRAZIL,NICARAGUA,COSTA RICA,MSU,98,"Jose Salazar; Cristian Matamoros;",N.A.,100,174.25,5100,AUMENTAR_20%
+117,On Time Delivery,Inventory in MSU ,GUATEMALA,NICARAGUA,d,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,174.25,1,POSTERGAR_PRODUCTO
+118,Production Management,Value Stream MTD - ARGENTINA,BRAZIL,NICARAGUA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,4786,87.01,DUPLICAR_HORA
+119,Production Management,Inventory in MSU ,NICARAGUA,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5100,5,90.83,AUMENTAR_20%
+120,Inventory Management,Production - BRAZIL,COSTA RICA,BRAZIL,MSU,120,"Laura Camacho; Cristian Matamoros;",N.A.,1,85.76,174.25,POSTERGAR_PRODUCTO
+121,On Time Delivery,Value Stream MTD - BRAZIL,COSTA RICA,BRAZIL,d,500,"Laura Camacho; Cristian Matamoros;",N.A.,174.25,90.59,90.59,DUPLICAR_HORA
+122,On Time Delivery,Inventory in MSU ,BRAZIL,ARGENTINA,MSU,98,"Jose Salazar; Cristian Matamoros;",N.A.,174.25,176.45,176.45,AUMENTAR_20%
+123,On Time Delivery,Value Stream MTD - ARGENTINA,NICARAGUA,BRAZIL,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,4786,176.45,176.45,POSTERGAR_PRODUCTO
+124,Inventory Management,Inventory in MSU ,GUATEMALA,BRAZIL,%,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5,4000,4000,DUPLICAR_HORA
+125,Inventory Management,Production - BRAZIL,BRAZIL,ARGENTINA,%,5000,"Laura Camacho; Cristian Matamoros;",N.A.,90.59,90.59,90.59,AUMENTAR_20%
+126,Production Management,Value Stream MTD - ARGENTINA,COSTA RICA,BRAZIL,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,176.45,176.45,176.45,POSTERGAR_PRODUCTO
+127,Inventory Management,Value Stream MTD - BRAZIL,NICARAGUA,ARGENTINA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,176.45,176.45,176.45,DUPLICAR_HORA
+128,On Time Delivery,Inventory in MSU ,COSTA RICA,NICARAGUA,%,120,"Jose Salazar; Cristian Matamoros;",N.A.,4000,4000,4000,AUMENTAR_20%
+129,On Time Delivery,Value Stream MTD - ARGENTINA,ARGENTINA,BRAZIL,d,500,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,1,1,1,POSTERGAR_PRODUCTO
+130,Production Management,Inventory in MSU ,ARGENTINA,NICARAGUA,MSU,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,100,100,100,DUPLICAR_HORA
+131,Inventory Management,Production - BRAZIL,GUATEMALA,COSTA RICA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,46.96,46.96,46.96,AUMENTAR_20%
+132,Production Management,Value Stream MTD - ARGENTINA,BRAZIL,ARGENTINA,%,98,"Laura Camacho; Cristian Matamoros;",N.A.,100,100,100,POSTERGAR_PRODUCTO
+133,Production Management,Value Stream MTD - BRAZIL,NICARAGUA,COSTA RICA,%,5000,"Laura Camacho; Cristian Matamoros;",N.A.,100,100,100,DUPLICAR_HORA
+134,Production Management,Inventory in MSU ,BRAZIL,NICARAGUA,d,120,"Jose Salazar; Cristian Matamoros;",N.A.,183,183,183,AUMENTAR_20%
+135,On Time Delivery,Production - BRAZIL,ARGENTINA,ARGENTINA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,183,183,183,POSTERGAR_PRODUCTO
+136,On Time Delivery,Value Stream MTD - ARGENTINA,ARGENTINA,NICARAGUA,d,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5100,5100,5100,DUPLICAR_HORA
+137,Production Management,Value Stream MTD - BRAZIL,GUATEMALA,ARGENTINA,MSU,500,"Laura Camacho; Cristian Matamoros;",N.A.,1,1,1,AUMENTAR_20%
+138,Production Management,Inventory in MSU ,BRAZIL,ARGENTINA,d,98,"Jose Salazar; Cristian Matamoros;",N.A.,174.25,174.25,1,POSTERGAR_PRODUCTO
+139,Inventory Management,Value Stream MTD - ARGENTINA,NICARAGUA,NICARAGUA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,174.25,87.01,DUPLICAR_HORA
+140,Production Management,Inventory in MSU ,GUATEMALA,COSTA RICA,%,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,4786,4786,90.83,AUMENTAR_20%
+141,Production Management,Production - BRAZIL,BRAZIL,ARGENTINA,MSU,500,"Laura Camacho; Cristian Matamoros;",N.A.,5,5,174.25,POSTERGAR_PRODUCTO
+142,Production Management,Value Stream MTD - BRAZIL,COSTA RICA,NICARAGUA,d,98,"Laura Camacho; Cristian Matamoros;",N.A.,5100,183,174.25,DUPLICAR_HORA
+143,Production Management,Inventory in MSU ,NICARAGUA,ARGENTINA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,1,183,4786,AUMENTAR_20%
+144,Inventory Management,Value Stream MTD - ARGENTINA,COSTA RICA,NICARAGUA,d,98,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,5100,5,POSTERGAR_PRODUCTO
+145,On Time Delivery,Inventory in MSU ,ARGENTINA,BRAZIL,%,5000,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,174.25,1,85.76,DUPLICAR_HORA
+146,On Time Delivery,Inventory in MSU ,BRAZIL,GUATEMALA,%,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,4786,174.25,90.59,AUMENTAR_20%
+147,On Time Delivery,Production - BRAZIL,NICARAGUA,ARGENTINA,MSU,120,"Laura Camacho; Hidalgo David; Carlos Lara;",N.A.,5,174.25,176.45,POSTERGAR_PRODUCTO
+148,On Time Delivery,Value Stream MTD - ARGENTINA,GUATEMALA,COSTA RICA,d,120,"Laura Camacho; Cristian Matamoros;",N.A.,90.59,4786,176.45,DUPLICAR_HORA
+149,Production Management,Value Stream MTD - BRAZIL,BRAZIL,COSTA RICA,%,500,"Laura Camacho; Cristian Matamoros;",N.A.,78.1,5,4000,AUMENTAR_20%
+150,Production Management,Inventory in MSU ,COSTA RICA,NICARAGUA,d,98,"Jose Salazar; Cristian Matamoros;",N.A.,85.76,5100,90.59,POSTERGAR_PRODUCTO
+151,Inventory Management,Value Stream MTD - ARGENTINA,NICARAGUA,COSTA RICA,MSU,120,"Jose Salazar; Cristian Matamoros;",N.A.,11,1,176.45,DUPLICAR_HORA

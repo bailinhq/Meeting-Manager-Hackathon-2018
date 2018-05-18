@@ -46,8 +46,8 @@ public class TreeController implements Serializable {
 
     public TreeController(Matrix mainMatrix) {
 
-        _features = new Matrix(mainMatrix, 0, 1, mainMatrix.rows(), mainMatrix.cols() - 1);
-        _labels = new Matrix(mainMatrix, 0, 0, mainMatrix.rows(), 1);
+        _features = new Matrix(mainMatrix, 0, 0, mainMatrix.rows(), mainMatrix.cols() - 1);
+        _labels = new Matrix(mainMatrix, 0, mainMatrix.cols()-1, mainMatrix.rows(), 1);
 
         _actualInstance = new ID3();
         _rootNode = _actualInstance.buildTree(_features, _labels);
