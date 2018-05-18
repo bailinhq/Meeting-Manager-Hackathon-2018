@@ -3,6 +3,7 @@ package application.controllers.admin;
 import application.ProblemsResolver.Matrix;
 import application.ProblemsResolver.TreeController;
 import application.TagsManager.CSVLoader;
+import application.TagsManager.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
@@ -25,6 +26,7 @@ import java.util.List;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 
 
 @Controller
@@ -32,6 +34,69 @@ public class MakeReservationController {
 
     @Autowired
     private ResourceLoader resourceLoader;
+
+    @RequestMapping(value = "/admin/generarevento", method = RequestMethod.GET)
+    public ModelAndView generarEvento(ModelAndView mv){
+        mv.setViewName("/admin/nuevareservacion");
+
+        //Cree un evento aleatorio
+        Event eventInstance = new Event();
+        Random rand = new Random();
+        for (int i = 0; i < 11; i++){
+            switch (i){
+                case 0:
+                    int x = rand.nextInt(3);
+                    switch (x){
+                        case 1:
+                            eventInstance.setWorkingProcess("Inventory Management");
+                            break;
+                        case 2:
+                            eventInstance.setWorkingProcess("On Time Delivery");
+                        case 3:
+                            eventInstance.setWorkingProcess("Production Management");
+                            break;
+                    }
+                    break;
+                case 1:
+                    int x = rand.nextInt(5);
+                    switch (){
+
+                    }
+                case 2:
+                    int x = rand.nextInt(5);
+/*@ATTRIBUTE source {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
+
+                case 3:/*@ATTRIBUTE destination {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
+                    int x = rand.nextInt(5);
+                case 4:/*@ATTRIBUTE unit {%,MSU,d}*/
+                    int x = rand.nextInt(3);
+                case 5:/*@ATTRIBUTE action {0,98,120,500,5000,5200}*/
+                    int x = rand.nextInt(6);
+                case 6:/*@ATTRIBUTE owner {"Jose Salazar; Cristian Matamoros;","Laura Camacho; Cristian Matamoros;","Laura Camacho; Hidalgo David; Carlos Lara;","Laura Camacho; Hidalgo David;"}*/
+                    int x = rand.nextInt(4);
+                case 7:/*@ATTRIBUTE escalation {N.A.}*/
+                    int x = rand.nextInt(1);
+                case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    int x = rand.nextInt(17);
+                case 9:/*@ATTRIBUTE 09-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    int x = rand.nextInt(17);
+                default:/*@ATTRIBUTE 07-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    int x = rand.nextInt(17);
+            }
+        }
+        //Lo evalue en el arbol de decision
+
+        //Con base en el resultado decidir si se envia a meeting o si se toma una decision
+
+        //Si SI se pasa al meeting al grafo
+            //+ se notifica
+            //+ Se Envia a las colas de los usuarios
+            //+ Se notifica
+        //Si NO -> se notifica
+
+
+        return mv;
+    }
 
     @RequestMapping(value = "/admin/nuevareservacion", method = RequestMethod.GET)
     public ModelAndView getMakeReservation(ModelAndView mv){
@@ -86,6 +151,25 @@ public class MakeReservationController {
                                    @RequestParam(value = "orderBy", required = false) String orderBy,
                                    @RequestParam(value = "orderType", required = false) Integer orderType,
                                    Model model) {
+
+        Matrix dataset = new Matrix();
+
+        try {
+            InputStream res = resourceLoader.getResource("url:http://localhost:8080/Datasets/Events1.arff").getInputStream();
+            dataset.loadArff(res);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
+        TreeController tree = new TreeController(dataset);
+
+        String salida = "";
+
+        System.out.println(tree.getQuestionAndOptions().toString());
+
+        tree.printTree();
+
         // Local variables
         /*try {
             if(partnerId != null) {

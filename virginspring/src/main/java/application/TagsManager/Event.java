@@ -15,6 +15,8 @@ public class Event {
     private ArrayList<Double> results;
     private int priority;
 
+    public Event(){}
+
     public Event(int numberE, String wp, String pMeasure, String src, String dest, String t,
                  int act, ArrayList<String> owner, String esc, ArrayList<Double> res, int prioridad){
         eventNumber = numberE;
