@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <th:block th:fragment="reservation-header">
+        <link rel="stylesheet" th:href="@{../css/dashboard.css}" type="text/css"/>
+        <link rel="stylesheet" th:href="@{../css/general.css}" type="text/css"/>
+        <script th:src="@{../../js/jquery-3.2.1.min.js}"/>
+        <script th:src="@{../js/cool-alerts.js}"></script>
+        <script th:src="@{../js/messages-alert.js}"></script>
+        <script th:src="@{../js/reservations.js}"></script>
+        <script th:src="@{../js/jquery-3.2.1.min.js}"></script>
+    </th:block>
+</head>
+<body>
+<section layout:fragment="reservation-table">
+<div class="content-wrapper">
+    <!-- Here we add our page content. Everything else is meant to be the same for every page. -->
+    <div class="float-left">
+        <h1>RESERVAS</h1>
+        <form th:action="@{/admin/nuevaReserva}">
+            <button type="submit" class="general">Agregar</button>
+        </form>
+    </div>
+    <p id="message-alert" class="not-visible" ></p>
+    <p id="message-alert-type" class="not-visible" ></p>
+    <div class="reservations-container clearfix">
+        <div class="date-selection-container">
+            <div class="float-left-no-margin">
+
+            </div>
+        </div>
+    </div>
+
+    <div id="workers-container" class="no-margin">
+        <label class="confirmation-label">Funcionario encargado</label>
+        <input id="workers-list" list="workers" class="action-selector rounded-border" placeholder="Nombre o código del funcionario"/>
+        <datalist id="workers">
+            <th:block >
+                <option ></option>
+            </th:block>
+        </datalist>
+        <label class="confirmation-label second-label">Arribo</label>
+        <input />
+        <button id="confirm-action" class="light-grey small margin-left">Aplicar</button>
+    </div>
+</div>
+<div class="table-container">
+    <table id="reservation-table" class="CrackTable">
+        <thead>
+            <!-- Variable that will be used to build our current url -->
+            <th:block >
+                <th ><input type="checkbox" id="selectAll"/></th>
+                <th >Working Process</th>
+                <th>In process measure</th>
+                <th>Source</th>
+                <th >Destination</th>
+                <th >Action</th>
+                <th >Unit</th>
+                <th >Owner</th>
+                <th >Scalation</th>
+                <th >Fechas</th>
+                <th >Prioridad</th>
+            </th:block>
+        </thead>
+        <tbody>
+            <form id="reservation-list"
+                  >
+                <th:block >
+                    <tr>
+                        <td  align="center">
+                            <label  class="switch">
+                                <input type="checkbox"   />
+                                <span class="slider round"></span>
+                            </label>
+                        </td>
+                        <td >
+                            <a class="link-reservation-id"
+
+                               ></a>
+                        </td>
+                        <td />
+                        <td />
+                        <td  />
+                        <td class="date-element" ></td>
+                        <td class="hide-mobile small-column time" ></td>
+                        <td />
+                        <td >
+                            <th:block >
+                                <th:block >
+                                    <span class="tag" ></span>
+                                </th:block>
+                            </th:block>
+                            <th:block >
+                                Sin comentarios.
+                            </th:block>
+                        </td>
+                        <td align="center" >
+                            <th:block >
+
+                            </th:block>
+                        </td>
+                        <td align="center" >
+                            <th:block >
+
+                            </th:block>
+                        </td>
+                    </tr>
+                </th:block>
+            </form>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+    <div class="empty-table-text" >
+        <span>No se encontraron reservas en estas fechas.</span>
+    </div>
+</div>
+</section>
+</body>
+</html>

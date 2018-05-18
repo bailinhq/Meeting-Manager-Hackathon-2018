@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,9 @@ import java.lang.reflect.Array;
 import java.time.LocalDate;
 import java.util.List;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 
 @Controller
 public class MakeReservationController {
@@ -32,7 +37,22 @@ public class MakeReservationController {
         mv.setViewName("/admin/nuevareservacion");
         return mv;
     }
+/*
+    @RequestMapping("/")
+    @ResponseBody
+    String getMainPage() {
+        String r = "";
+        try(
+        InputStream inputStream = resourceLoader.getResource("url:http://localhost:8080/Datasets/Events.csv").getInputStream())
+        {
+            CSVLoader loader = new CSVLoader();
+            r = loader.load(inputStream);
+        }
+        catch (IOException e){
 
+        }
+        return r;
+    }*/
     @RequestMapping("/")
     @ResponseBody
     String getMainPage(){
@@ -156,5 +176,4 @@ public class MakeReservationController {
 
         return "admin/reservations";
     }
-
 }
