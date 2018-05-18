@@ -123,7 +123,7 @@ public class MakeReservationController {
                     x = rand.nextInt(4);
                 case 7:/*@ATTRIBUTE escalation {N.A.}*/
                     x = rand.nextInt(1);
-                case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100} */
                     x = rand.nextInt(17);
                     switch (x)
                     {
