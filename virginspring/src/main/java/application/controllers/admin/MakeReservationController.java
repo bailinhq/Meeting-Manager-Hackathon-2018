@@ -38,8 +38,6 @@ public class MakeReservationController {
 
     @RequestMapping(value = "/admin/generarevento")
     public ModelAndView generarEvento(ModelAndView mv){
-        //mv.setViewName("/admin/nuevareservacion");
-
 
         //Lo evalue en el arbol de decision
 
