@@ -63,7 +63,7 @@ public class SecurityConfig {
                     .permitAll()
                     .antMatchers(HttpMethod.OPTIONS,"/admin/horarios/obtener-horarios-verano")
                     .permitAll()
-
+                    /*
                     .antMatchers("/admin/**")
                     .hasAnyAuthority("BOSS", "UNDERBOSS")
 
@@ -82,7 +82,7 @@ public class SecurityConfig {
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login")
                     .deleteCookies("JSESSIONID")
-
+*/
                     .and()
                     .exceptionHandling()
                     .accessDeniedPage("/403")

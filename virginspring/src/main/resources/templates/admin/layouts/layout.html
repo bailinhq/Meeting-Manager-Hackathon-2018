@@ -20,14 +20,7 @@
             <p class="top-menu-date hide-mobile" th:text="'Fecha: ' + ${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></p>
             <a class="profile-links" href="/logout">Cerrar Sesión</a>
             <a class="profile-links" href="/admin/editar-perfil">Administrar Perfil</a>
-            <div class="profile-display">
-                <img alt="Canatur" th:src="@{../../images/profile-icon.png}" />
-                <a href="#" th:text="'¡Hola, '+ |${#authentication.getName().split(',')[1]}| + '!'">Hola, Canatur!</a>
-                <ul class="profile-menu">
-                    <li><a href="/admin/editar-perfil">Administrar Perfil</a></li>
-                    <li><a href="/logout">Cerrar Sesión</a></li>
-                </ul>
-            </div>
+
         </div>
     </div>
 </section>
@@ -39,14 +32,14 @@
                     <img th:src="@{../../images/logo-canatur@168x55px.png}"/>
                 </a>
             </div>
-            <h2>Sistema de Reservas</h2>
+            <h2>Meeting Avoider</h2>
         </header>
         <nav id="mainnav">
             <ul>
                 <!-- Remeber to change the selected-item class for the page we are in. This is changed, depending on the URL. -->
                 <th:block th:with="url=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}">
                 <li th:classappend="${#strings.contains(url.toUriString(),'reservas') || #strings.contains(url.toUriString(),'nuevareservacion')} ? selected-item : not-selected">
-                    <a href="/admin/reservas">Reservaciones</a>
+                    <a href="/admin/reservas">Pending Events</a>
                 </li>
                 <li th:classappend="${#strings.contains(url.toUriString(),'reportes')} ? selected-item : not-selected">
                     <a href="/admin/reportes">Reportes</a>
