@@ -44,6 +44,7 @@ public class MakeReservationController {
         int x = 0;
         Event eventInstance = new Event();
         Random rand = new Random();
+        int x = 0;
         for (int i = 0; i < 11; i++){
             switch (i){
                 case 0:
@@ -62,9 +63,22 @@ public class MakeReservationController {
                     break;
                 case 1:
                     x = rand.nextInt(5);
-                    switch (){
+                    switch (x){
+                        case 1:
+                            eventInstance.setProcessMeasure("Value Stream MTD");
+                            break;
+                        case 2:
+                            eventInstance.setProcessMeasure("Inventory in MSU ");
+                            break;
+                        case 3:
+                            eventInstance.setProcessMeasure("Value Stream MTD - ARGENTINA");
+                            break;
+                        case 4:
+                            eventInstance.setProcessMeasure("Production - BRAZIL");
+                            break;
+                        case 5:
+                            eventInstance.setProcessMeasure("Value Stream CFR");
 
-                    }
                 case 2:
                     x = rand.nextInt(5);
                     switch (x){
@@ -88,6 +102,63 @@ public class MakeReservationController {
 
                 case 3:/*@ATTRIBUTE destination {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
                     x = rand.nextInt(5);
+                case 4:/*@ATTRIBUTE unit {%,MSU,d}*/
+                    x = rand.nextInt(3);
+                case 5:/*@ATTRIBUTE action {0,98,120,500,5000,5200}*/
+                    x = rand.nextInt(6);
+                    switch (x){
+                        case 1:
+                            eventInstance.setAction(0);
+                            break;
+                        case 2:
+                            eventInstance.setAction(98);
+                            break;
+                        case 3:
+                            eventInstance.setAction(120);
+                            break;
+                        case 4:
+                            eventInstance.setAction(500);
+                            break;
+                        case 5:
+                            eventInstance.setAction(5000);
+                            break;
+                    }
+                case 6:/*@ATTRIBUTE owner {"Jose Salazar; Cristian Matamoros;","Laura Camacho; Cristian Matamoros;","Laura Camacho; Hidalgo David; Carlos Lara;","Laura Camacho; Hidalgo David;"}*/
+                    x = rand.nextInt(4);
+                    ArrayList<String> owners = new ArrayList<String>();
+                    switch (x){
+                        case 1:
+                            owners.add("Jose Salazar");
+                            owners.add("Cristian Matamoros");
+                            eventInstance.setOwners(owners);
+                            break;
+                        case 2:
+                            owners.add("Laura Camacho");
+                            owners.add("Cristian Matamoros");
+                            eventInstance.setOwners(owners);
+                            break;
+                        case 3:
+                            owners.add("Laura Camacho");
+                            owners.add("Hidalgo David");
+                            owners.add("Carlos Lara");
+                            eventInstance.setOwners(owners);
+                            break;
+                        case 4:
+                            owners.add("Laura Camacho");
+                            owners.add("Hidalgo David");
+                            eventInstance.setOwners(owners);
+                            break;
+                    }
+
+                case 7:/*@ATTRIBUTE escalation {N.A.}*/
+                    x = rand.nextInt(1);
+                    eventInstance.setEscalation("N.A.");
+                case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    x = rand.nextInt(17);
+                case 9:/*@ATTRIBUTE 09-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    x = rand.nextInt(17);
+                default:/*@ATTRIBUTE 07-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    x = rand.nextInt(17);
                     switch (x){
                         case 1:
                             eventInstance.setDestination("ARGENTINA");
