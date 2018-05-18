@@ -2,6 +2,7 @@ package application.controllers.admin;
 
 import application.ProblemsResolver.Matrix;
 import application.ProblemsResolver.TreeController;
+import application.TagsManager.CSVLoader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.InputStreamResource;
@@ -53,7 +54,7 @@ public class MakeReservationController {
         }
         return r;
     }*/
-    @RequestMapping("/")
+    @RequestMapping("/notificaciones")
     @ResponseBody
     String getMainPage(){
         Matrix dataset = new Matrix();
@@ -70,11 +71,10 @@ public class MakeReservationController {
 
         String salida = "";
 
-
         return tree.getQuestionAndOptions().toString();
     }
 
-    @RequestMapping(value = "/admin/other")
+    @RequestMapping(value = "/")
     public String listReservations(@RequestParam(value = "initDate", required = false) String initDate,
                                    @RequestParam(value = "endDate", required = false) String endDate,
                                    @RequestParam(value = "partner", required = false) String partnerId,

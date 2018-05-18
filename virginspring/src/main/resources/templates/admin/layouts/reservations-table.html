@@ -17,7 +17,7 @@
 <div class="content-wrapper">
     <!-- Here we add our page content. Everything else is meant to be the same for every page. -->
     <div class="float-left">
-        <h1>RESERVAS</h1>
+        <h1>DASHBOARD</h1>
         <form th:action="@{/admin/nuevaReserva}">
             <button type="submit" class="general">Agregar</button>
         </form>
@@ -33,16 +33,7 @@
     </div>
 
     <div id="workers-container" class="no-margin">
-        <label class="confirmation-label">Funcionario encargado</label>
-        <input id="workers-list" list="workers" class="action-selector rounded-border" placeholder="Nombre o código del funcionario"/>
-        <datalist id="workers">
-            <th:block >
-                <option ></option>
-            </th:block>
-        </datalist>
-        <label class="confirmation-label second-label">Arribo</label>
-        <input />
-        <button id="confirm-action" class="light-grey small margin-left">Aplicar</button>
+
     </div>
 </div>
 <div class="table-container">
