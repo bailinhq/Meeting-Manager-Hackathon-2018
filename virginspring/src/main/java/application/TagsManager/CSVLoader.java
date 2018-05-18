@@ -28,8 +28,8 @@ public class CSVLoader {
         return s;
     }
 
-    public void main(String[] args) throws IOException {
-
+    public void main(String[] args)  {
+        System.out.println("");
     }
 
 }
