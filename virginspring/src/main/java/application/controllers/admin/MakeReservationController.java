@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import java.io.IOException;
@@ -38,50 +39,212 @@ public class MakeReservationController {
     @RequestMapping(value = "/admin/generarevento", method = RequestMethod.GET)
     public ModelAndView generarEvento(ModelAndView mv){
         mv.setViewName("/admin/nuevareservacion");
-
-        //Cree un evento aleatorio
+        ArrayList<Double> results = new ArrayList<Double>();
+        //Cree un evento aleatorio.
+        int x = 0;
         Event eventInstance = new Event();
         Random rand = new Random();
         for (int i = 0; i < 11; i++){
             switch (i){
                 case 0:
-                    int x = rand.nextInt(3);
+                    x = rand.nextInt(3);
                     switch (x){
                         case 1:
                             eventInstance.setWorkingProcess("Inventory Management");
                             break;
                         case 2:
                             eventInstance.setWorkingProcess("On Time Delivery");
+                            break;
                         case 3:
                             eventInstance.setWorkingProcess("Production Management");
                             break;
                     }
                     break;
                 case 1:
-                    int x = rand.nextInt(5);
+                    x = rand.nextInt(5);
                     switch (){
 
                     }
                 case 2:
-                    int x = rand.nextInt(5);
+                    x = rand.nextInt(5);
+                    switch (x){
+                        case 1:
+                            eventInstance.setSource("ARGENTINA");
+                            break;
+                        case 2:
+                            eventInstance.setSource("BRAZIL");
+                            break;
+                        case 3:
+                            eventInstance.setSource("GUATEMALA");
+                            break;
+                        case 4:
+                            eventInstance.setSource("NICARAGUA");
+                            break;
+                        case 5:
+                            eventInstance.setSource("COSTA RICA");
+                            break;
+                    }
 /*@ATTRIBUTE source {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
 
                 case 3:/*@ATTRIBUTE destination {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
-                    int x = rand.nextInt(5);
+                    x = rand.nextInt(5);
+                    switch (x){
+                        case 1:
+                            eventInstance.setDestination("ARGENTINA");
+                            break;
+                        case 2:
+                            eventInstance.setDestination("BRAZIL");
+                            break;
+                        case 3:
+                            eventInstance.setDestination("GUATEMALA");
+                            break;
+                        case 4:
+                            eventInstance.setDestination("NICARAGUA");
+                            break;
+                        case 5:
+                            eventInstance.setDestination("COSTA RICA");
+                            break;
+                    }
                 case 4:/*@ATTRIBUTE unit {%,MSU,d}*/
-                    int x = rand.nextInt(3);
+                    x = rand.nextInt(3);
+                    switch (x){
+                        case 1:
+                            eventInstance.setType("d");
+                            break;
+                        case 2:
+                            eventInstance.setType("%");
+                            break;
+                        case 3:
+                            eventInstance.setType("MSU");
+                            break;
                 case 5:/*@ATTRIBUTE action {0,98,120,500,5000,5200}*/
-                    int x = rand.nextInt(6);
+                    x = rand.nextInt(6);
                 case 6:/*@ATTRIBUTE owner {"Jose Salazar; Cristian Matamoros;","Laura Camacho; Cristian Matamoros;","Laura Camacho; Hidalgo David; Carlos Lara;","Laura Camacho; Hidalgo David;"}*/
-                    int x = rand.nextInt(4);
+                    x = rand.nextInt(4);
                 case 7:/*@ATTRIBUTE escalation {N.A.}*/
-                    int x = rand.nextInt(1);
+                    x = rand.nextInt(1);
                 case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
-                case 9:/*@ATTRIBUTE 09-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
-                default:/*@ATTRIBUTE 07-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
+                    x = rand.nextInt(17);
+                    switch (x)
+                    {
+                        case 1:
+                            results.add(1.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 2:
+                            results.add(5.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 3:
+                            results.add(11.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 4:
+                            results.add(46.96);
+                            eventInstance.setResults(results);
+                            break;
+                        case 5:
+                            results.add(77.53);
+                            eventInstance.setResults(results);
+                            break;
+                        case 6:
+                            results.add(78.1);
+                            eventInstance.setResults(results);
+                            break;
+                        case 7:
+                            results.add(87.01);
+                            eventInstance.setResults(results);
+                            break;
+                        case 8:
+                            results.add(90.59);
+                            eventInstance.setResults(results);
+                            break;
+                        case 9:
+                            results.add(90.83);
+                            eventInstance.setResults(results);
+                            break;
+                        case 10:
+                            results.add(100.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 11:
+                            results.add(174.25);
+                            eventInstance.setResults(results);
+                            break;
+                        case 12:
+                            results.add(176.45);
+                            eventInstance.setResults(results);
+                            break;
+                        case 13:
+                            results.add(183.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 14:
+                            results.add(4000.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 15:
+                            results.add(4786.0);
+                            eventInstance.setResults(results);
+                            break;
+                        case 16:
+                            results.add(5100.0);
+                            eventInstance.setResults(results);
+                            break;
+                    }
+                case 9:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
+                    x = rand.nextInt(17);
+                    switch (x)
+                    {
+                        case 1:
+                            eventInstance.getResults().add(1.0);
+                            break;
+                        case 2:
+                            eventInstance.getResults().add(5.0);
+                            break;
+                        case 3:
+                            eventInstance.getResults().add(11.0);
+                            break;
+                        case 4:
+                            eventInstance.getResults().add(46.96);
+                            break;
+                        case 5:
+                            eventInstance.getResults().add(77.3);
+                            break;
+                        case 6:
+                            eventInstance.getResults().add(78.1);
+                            break;
+                        case 7:
+                            eventInstance.getResults().add(85.76);
+                            break;
+                        case 8:
+                            eventInstance.getResults().add(87.01);
+                            break;
+                        case 9:
+                            eventInstance.getResults().add(90.59);
+                            break;
+                        case 10:
+                            eventInstance.getResults().add(100);
+                            break;
+                        case 11:
+                            eventInstance.getResults().add(174.25);
+                            break;
+                        case 12:
+                            eventInstance.getResults().add(176.45);
+                            break;
+                        case 13:
+                            eventInstance.getResults().add(183.0);
+                            break;
+                        case 14:
+                            eventInstance.getResults().add(4000.0);
+                            break;
+                        case 15:
+                            eventInstance.getResults().add(4786);
+                            break;
+                        case 16:
+                            eventInstance.getResults().add(5100.0);
+                            break;
+                    }
             }
         }
         //Lo evalue en el arbol de decision
