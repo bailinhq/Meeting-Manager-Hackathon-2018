@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import java.io.IOException;
@@ -35,56 +36,33 @@ public class MakeReservationController {
     @Autowired
     private ResourceLoader resourceLoader;
 
-    @RequestMapping(value = "/admin/generarevento", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/generarevento")
     public ModelAndView generarEvento(ModelAndView mv){
-        mv.setViewName("/admin/nuevareservacion");
+        //mv.setViewName("/admin/nuevareservacion");
 
-        //Cree un evento aleatorio
-        Event eventInstance = new Event();
-        Random rand = new Random();
-        for (int i = 0; i < 11; i++){
-            switch (i){
-                case 0:
-                    int x = rand.nextInt(3);
-                    switch (x){
-                        case 1:
-                            eventInstance.setWorkingProcess("Inventory Management");
-                            break;
-                        case 2:
-                            eventInstance.setWorkingProcess("On Time Delivery");
-                        case 3:
-                            eventInstance.setWorkingProcess("Production Management");
-                            break;
-                    }
-                    break;
-                case 1:
-                    int x = rand.nextInt(5);
-                    switch (){
 
-                    }
-                case 2:
-                    int x = rand.nextInt(5);
-/*@ATTRIBUTE source {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
-
-                case 3:/*@ATTRIBUTE destination {ARGENTINA,BRAZIL,COSTA RICA,GUATEMALA,NICARAGUA}*/
-                    int x = rand.nextInt(5);
-                case 4:/*@ATTRIBUTE unit {%,MSU,d}*/
-                    int x = rand.nextInt(3);
-                case 5:/*@ATTRIBUTE action {0,98,120,500,5000,5200}*/
-                    int x = rand.nextInt(6);
-                case 6:/*@ATTRIBUTE owner {"Jose Salazar; Cristian Matamoros;","Laura Camacho; Cristian Matamoros;","Laura Camacho; Hidalgo David; Carlos Lara;","Laura Camacho; Hidalgo David;"}*/
-                    int x = rand.nextInt(4);
-                case 7:/*@ATTRIBUTE escalation {N.A.}*/
-                    int x = rand.nextInt(1);
-                case 8:/*@ATTRIBUTE 10-May {1,5,11,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
-                case 9:/*@ATTRIBUTE 09-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
-                default:/*@ATTRIBUTE 07-May {1,5,46.96,77.53,78.1,85.76,87.01,90.59,90.83,100,174.25,176.45,183,4000,4786,5100}*/
-                    int x = rand.nextInt(17);
-            }
-        }
         //Lo evalue en el arbol de decision
+
+        ArrayList<String> owners = new ArrayList<String>();
+        owners.add("Jose Salazar;");
+        owners.add(" Cristian Matamoros;");
+        ArrayList<Double> results = new ArrayList<Double>();
+        results.add(90.83);
+        results.add(90.59);//results.add(77.53);
+        results.add(46.96);//results.add(174.25);
+        Event event = new Event(1,"On Time Delivery", "Production - BRAZIL", "ARGENTINA", "BRAZIL", "MSU",98, owners, "N.A.", results,5);
+
+        Matrix dataset = new Matrix();
+
+        try {
+            InputStream res = resourceLoader.getResource("url:http://localhost:8080/Datasets/Events1.arff").getInputStream();
+            dataset.loadArff(res);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        TreeController tree = new TreeController(dataset);
+
 
         //Con base en el resultado decidir si se envia a meeting o si se toma una decision
 
@@ -93,9 +71,22 @@ public class MakeReservationController {
             //+ Se Envia a las colas de los usuarios
             //+ Se notifica
         //Si NO -> se notifica
+        ArrayList<String> array = event.getArray();
+        String result = array.get(0) + " " + array.get(1) + " " + array.get(2) + " " + array.get(3) + " " + array.get(4) + " " + array.get(5) + " " + array.get(6) + " " + array.get(7) + " " + array.get(8) + " " + array.get(9) + " " +  array.get(10) + " ";
 
-
-        return mv;
+        mv.setViewName("admin/reservations");
+        mv.addObject("workprocess"     ,array.get(0));
+        mv.addObject("inprocessmeasure",array.get(1));
+        mv.addObject("source",          array.get(2));
+        mv.addObject("destination",     array.get(3));
+        mv.addObject("unit",            array.get(4));
+        mv.addObject("action",          array.get(5));
+        mv.addObject("owner",           array.get(6));
+        mv.addObject("escalation",      tree.evaluateEvent(event.getArray()));
+        mv.addObject("10-May",          array.get(8));
+        mv.addObject("09-May",          array.get(9));
+        mv.addObject("07-May",          array.get(10));
+        return  mv;
     }
 
     @RequestMapping(value = "/admin/nuevareservacion", method = RequestMethod.GET)
@@ -162,13 +153,13 @@ public class MakeReservationController {
         }
 
 
-        TreeController tree = new TreeController(dataset);
+        //TreeController tree = new TreeController(dataset);
 
         String salida = "";
 
-        System.out.println(tree.getQuestionAndOptions().toString());
+        //System.out.println(tree.getQuestionAndOptions().toString());
 
-        tree.printTree();
+        //tree.printTree();
 
         // Local variables
         /*try {
@@ -257,7 +248,17 @@ public class MakeReservationController {
 
         // Data retrieval
         //model.addAttribute("reservations", reservationService.getReservations(initDateSearched, endDateSearched, partnerIdNum, flightSearched, nameSearched, reservationState, offset, limit, orderBy, orderTypeString ));
-
+        model.addAttribute("workprocess"     ,"");
+        model.addAttribute("inprocessmeasure","");
+        model.addAttribute("source",          "");
+        model.addAttribute("destination",     "");
+        model.addAttribute("unit",            "");
+        model.addAttribute("action",          "");
+        model.addAttribute("owner",           "");
+        model.addAttribute("escalation",      "");
+        model.addAttribute("10-May",          "");
+        model.addAttribute("09-May",          "");
+        model.addAttribute("07-May",          "");
         return "admin/reservations";
     }
 }
