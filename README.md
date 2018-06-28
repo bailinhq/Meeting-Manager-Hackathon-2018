@@ -1,3 +1,2 @@
 # VirginSpring working Template
-
-A working starting template to Spring
+Java-Spring project using Machine Learning for the P&G Hackathon 2018
